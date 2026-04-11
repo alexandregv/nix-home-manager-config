@@ -15,6 +15,8 @@
   ];
 
   home.file = {
+    ".config/tmux/tmux.conf".source = dotfiles/.config/tmux/tmux.conf;
+    ".config/tmux/tokyonight_storm.tmux".source = dotfiles/.config/tmux/tokyonight_storm.tmux;
     ".config/ghostty/config".source = dotfiles/.config/ghostty/config;
     ".config/ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
   };
@@ -39,6 +41,8 @@
   
     # Any other Home Manager-managed files the host needs to read
     files = [
+      ".config/tmux/tmux.conf"
+      ".config/tmux/tokyonight_storm.tmux"
       ".config/ghostty/config"
       ".config/ghostty/themes/tokyonight-storm"
     ];
