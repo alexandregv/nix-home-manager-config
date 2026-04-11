@@ -1,0 +1,36 @@
+# vi: ft=ghostty
+# Doc: https://ghostty.org/docs/config/reference
+
+# Set theme. List all with `ghostty +list-themes`
+theme = tokyonight-storm
+
+# Override TERM to work in tmux etc
+#term = xterm-256color
+
+# Disable top bar, start in fullscreen, set static title
+fullscreen = true
+gtk-titlebar = false
+window-decoration = false
+title = Ghostty
+
+# Use a block cursor and hide mouse while typing
+cursor-style = block
+shell-integration-features = no-cursor
+mouse-hide-while-typing = true
+
+# Set font. List all with `ghostty +list-fonts`
+# TX-02 Datasheet: https://usgraphics.com/static/products/TX-02/datasheet/TX-02-datasheet.a43c0c7f8d8c.pdf
+# https://fontdrop.info/
+font-family = "TX-02 Berkeley Mono"
+font-feature = ss02
+#font-feature = -calt
+
+#font-family = Fira Code
+#font-faily = JetBrainsMono Nerd Font
+font-size = 11
+
+# Disable programming ligatures
+#font-feature = -calt
+
+# Keybinds
+keybind = ctrl+shift+f=toggle_fullscreen

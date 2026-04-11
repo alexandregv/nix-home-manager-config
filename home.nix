@@ -15,6 +15,8 @@
   ];
 
   home.file = {
+    ".config/ghostty/config".source = dotfiles/.config/ghostty/config;
+    ".config/ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
   };
 
   # Home Manager can also manage your environment variables through
@@ -36,6 +38,9 @@
     xdgDesktopEntries = true;
   
     # Any other Home Manager-managed files the host needs to read
-    files = [];
+    files = [
+      ".config/ghostty/config"
+      ".config/ghostty/themes/tokyonight-storm"
+    ];
   };
 }
