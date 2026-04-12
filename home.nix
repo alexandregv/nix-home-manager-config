@@ -13,6 +13,7 @@
     unstablePkgs.neovim
     pkgs.gnumake
     pkgs.hister
+    pkgs.bluebuild
   ];
 
   home.file = {

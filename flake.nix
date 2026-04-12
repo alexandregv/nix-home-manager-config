@@ -11,10 +11,11 @@
     };
 
     hister.url = "github:asciimoo/hister";
+    bluebuild.url = "https://flakehub.com/f/blue-build/cli/v0.9.35.tar.gz";
   };
 
   outputs =
-    { nixpkgs, unstable, home-manager, hister, ... }:
+    { nixpkgs, unstable, home-manager, hister, bluebuild, ... }:
     let
       system = "x86_64-linux";
 
@@ -24,6 +25,7 @@
         overlays = [
           (final: prev: {
             hister = hister.packages.${prev.stdenv.hostPlatform.system}.default;
+            bluebuild = bluebuild.packages.${prev.stdenv.hostPlatform.system}.default;
           })
         ];
       };
