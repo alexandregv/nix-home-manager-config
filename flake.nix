@@ -9,16 +9,23 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hister.url = "github:asciimoo/hister";
   };
 
   outputs =
-    { nixpkgs, unstable, home-manager, ... }:
+    { nixpkgs, unstable, home-manager, hister, ... }:
     let
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
         inherit system;
         # config.allowUnfree = true;
+        overlays = [
+          (final: prev: {
+            hister = hister.packages.${prev.system}.default;
+          })
+        ];
       };
 
       unstablePkgs = import unstable {

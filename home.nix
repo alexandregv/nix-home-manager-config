@@ -12,6 +12,7 @@
   home.packages = [
     unstablePkgs.neovim
     pkgs.gnumake
+    pkgs.hister
   ];
 
   home.file = {
