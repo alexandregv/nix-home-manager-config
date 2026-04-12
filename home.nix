@@ -17,6 +17,7 @@
   home.file = {
     ".inputrc".source = dotfiles/.inputrc;
     ".bashrc".source = dotfiles/.bashrc;
+    ".local/bin/vpn-fzf".source = dotfiles/.local/bin/vpn-fzf;
   };
 
   xdg.configFile = {

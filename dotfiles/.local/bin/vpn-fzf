@@ -1,0 +1,24 @@
+#!/bin/bash
+
+selected=$(nmcli -t -f NAME,TYPE con show | \
+  awk -F: '$2 == "vpn" || $2 == "wireguard"' | \
+  while IFS=: read -r name type; do
+    if nmcli -t -f NAME con show --active | grep -Fxq "$name"; then
+      status="🟢"
+    else
+      status="🔴"
+    fi
+    echo "$status $name"
+  done | fzf --height 40% --tmux center,60%,40% --prompt "vpn: " --border)
+
+[[ -z "$selected" ]] && return
+
+conn_name="${selected#* }"
+
+if nmcli -t -f NAME con show --active | grep -Fxq "$conn_name"; then
+  nmcli con down "$conn_name"
+else
+  nmcli con up "$conn_name"
+fi
+
+tmux refresh-client -S
