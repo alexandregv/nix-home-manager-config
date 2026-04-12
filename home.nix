@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, unstablePkgs, ... }:
 
 {
   home.username = "reach";
@@ -10,7 +10,7 @@
   home.stateVersion = "25.11";
 
   home.packages = [
-    pkgs.neovim
+    unstablePkgs.neovim
     pkgs.gnumake
   ];
 
