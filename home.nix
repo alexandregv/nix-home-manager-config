@@ -17,10 +17,13 @@
   home.file = {
     ".inputrc".source = dotfiles/.inputrc;
     ".bashrc".source = dotfiles/.bashrc;
-    ".config/tmux/tmux.conf".source = dotfiles/.config/tmux/tmux.conf;
-    ".config/tmux/tokyonight_storm.tmux".source = dotfiles/.config/tmux/tokyonight_storm.tmux;
-    ".config/ghostty/config".source = dotfiles/.config/ghostty/config;
-    ".config/ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
+  };
+
+  xdg.configFile = {
+    "tmux/tmux.conf".source = dotfiles/.config/tmux/tmux.conf;
+    "tmux/tokyonight_storm.tmux".source = dotfiles/.config/tmux/tokyonight_storm.tmux;
+    "ghostty/config".source = dotfiles/.config/ghostty/config;
+    "ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
   };
 
   # Home Manager can also manage your environment variables through
