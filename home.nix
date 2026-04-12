@@ -37,21 +37,4 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  hostConfig = {
-    enable = true;
-  
-    # Automatically materialize all xdg.desktopEntries as real files
-    xdgDesktopEntries = true;
-  
-    # Any other Home Manager-managed files the host needs to read
-    files = [
-      ".inputrc"
-      ".bashrc"
-      ".config/tmux/tmux.conf"
-      ".config/tmux/tokyonight_storm.tmux"
-      ".config/ghostty/config"
-      ".config/ghostty/themes/tokyonight-storm"
-    ];
-  };
 }

@@ -8,16 +8,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-config = {
-      url = "github:thrix/nix-config";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
   };
 
   outputs =
-    { nixpkgs, home-manager, nix-config, ... }:
+    { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -29,7 +23,6 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [
-           nix-config.homeManagerModules.hostConfig
 	  ./home.nix
 	];
 
