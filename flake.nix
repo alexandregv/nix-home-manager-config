@@ -24,8 +24,8 @@
         # config.allowUnfree = true;
         overlays = [
           (final: prev: {
-            hister = hister.packages.${prev.stdenv.hostPlatform.system}.default;
-            bluebuild = bluebuild.packages.${prev.stdenv.hostPlatform.system}.default;
+            hister = hister.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
+            bluebuild = bluebuild.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
           })
         ];
       };
