@@ -23,7 +23,7 @@
         # config.allowUnfree = true;
         overlays = [
           (final: prev: {
-            hister = hister.packages.${prev.system}.default;
+            hister = hister.packages.${prev.stdenv.hostPlatform.system}.default;
           })
         ];
       };
