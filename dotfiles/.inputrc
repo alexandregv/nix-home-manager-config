@@ -1,0 +1,33 @@
+set completion-ignore-case On
+
+set editing-mode vi
+#set editing-mode emacs
+
+# vi mode bindings
+$if mode=vi
+        # Do not wait after pressing Esc
+        set keyseq-timeout 0.01
+
+        # Set cursor to block in cmd mode and to beam in insert mode
+        set show-mode-in-prompt off
+        set vi-ins-mode-string \1\e[6 q\2
+        set vi-cmd-mode-string \1\e[2 q\2
+
+        # vi-command mode specific
+        set keymap vi-command
+        Control-l: clear-screen
+        Control-a: beginning-of-line
+        Control-e: end-of-line
+        "\C-x\C-e": edit-and-execute-command
+
+        # vi-insert mode specific
+        set keymap vi-insert
+        Control-l: clear-screen
+        Control-a: beginning-of-line
+        Control-e: end-of-line
+        "\C-x\C-e": edit-and-execute-command
+$endif
+
+# emacs mode bindings
+$if mode=emacs
+$endif
