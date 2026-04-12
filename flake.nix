@@ -24,7 +24,6 @@
         # config.allowUnfree = true;
         overlays = [
           (final: prev: {
-            hister = hister.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
             bluebuild = bluebuild.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
           })
         ];
@@ -45,6 +44,7 @@
 
         modules = [
 	  ./home.nix
+          hister.homeModules.default
 	];
       };
     };

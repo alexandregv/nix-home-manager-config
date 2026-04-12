@@ -1,0 +1,47 @@
+app:
+    directory: /var/home/reach/.local/share/hister
+    search_url: https://google.com/search?udm=14&q={query}
+    access_token: ""
+    user_handling: false
+    log_level: info
+    debug_sql: false
+    open_results_on_new_tab: false
+    redirect_on_no_results: true
+server:
+    address: 127.0.0.1:4433
+    base_url: ""
+#   database: db.sqlite3
+indexer:
+    detect_languages: true
+    directories: []
+#     - path: ~/Documents
+#       filetypes: ['md', 'txt']
+    max_file_size_mb: 1
+crawler:
+    timeout: 5
+    delay: 0
+    backend: http
+    backend_options: {}
+    user_agent: ""
+    headers: {}
+    cookies: []
+hotkeys:
+    web:
+        /: focus_search_input
+        '?': show_hotkeys
+        alt+enter: open_result_in_new_tab
+        alt+j: select_next_result
+        alt+k: select_previous_result
+        alt+o: open_query_in_search_engine
+        alt+v: view_result_popup
+        enter: open_result
+        tab: autocomplete
+    tui: {}
+sensitive_content_patterns:
+    aws_access_key: AKIA[0-9A-Z]{16}
+    aws_secret_key: (?i)aws(.{0,20})?(secret)?(.{0,20})?['"][0-9a-zA-Z\/+]{40}['"]
+    generic_private_key: '-----BEGIN ((RSA|EC|DSA) )?PRIVATE KEY-----'
+    github_token: (ghp|gho|ghu|ghs|ghr)_[a-zA-Z0-9]{36}
+    pgp_private_key: '-----BEGIN PGP PRIVATE KEY BLOCK-----'
+    ssh_private_key: '-----BEGIN OPENSSH PRIVATE KEY-----'
+    intra42_api_secret: 's-s4t2(?:ud|af)-[abcdef0123456789]{64}'
