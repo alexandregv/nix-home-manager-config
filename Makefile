@@ -5,6 +5,6 @@ check:
 	home-manager build --flake . -n
 
 switch:
-	home-manager switch --flake .
+	home-manager switch --flake . -b backup
 
 .PHONY: default check switch
