@@ -16,6 +16,7 @@
     pkgs.dive
     pkgs.fx
     pkgs.bat
+    pkgs.ncdu
   ];
 
   home.file = {
