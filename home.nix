@@ -36,6 +36,7 @@
   # located at ~/.nix-profile/etc/profile.d/hm-session-vars.sh
   home.sessionVariables = {
     EDITOR = "nvim";
+    FIGNORE = ":.lock:.sum";
   };
 
   imports = [
