@@ -13,6 +13,9 @@
     unstablePkgs.neovim
     pkgs.gnumake
     pkgs.bluebuild
+    pkgs.dive
+    pkgs.fx
+    pkgs.bat
   ];
 
   home.file = {
