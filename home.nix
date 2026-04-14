@@ -17,7 +17,7 @@
 
   home.file = {
     ".inputrc".source = dotfiles/.inputrc;
-    ".bashrc".source = dotfiles/.bashrc;
+    #".bashrc".source = dotfiles/.bashrc;
     ".local/bin/vpn-fzf".source = dotfiles/.local/bin/vpn-fzf;
   };
 
@@ -44,4 +44,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.bash = {
+    enable = true;
+  };
 }
