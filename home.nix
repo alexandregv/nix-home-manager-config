@@ -9,6 +9,11 @@
   # release notes.
   home.stateVersion = "25.11";
 
+  home.keyboard = {
+    layout = "us";
+    variant = "altgr-intl";
+  };
+
   home.packages = [
     unstablePkgs.neovim
     pkgs.gnumake
