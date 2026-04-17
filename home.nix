@@ -33,7 +33,6 @@
   };
 
   xdg.configFile = {
-    "tmux/tmux.conf".source = dotfiles/.config/tmux/tmux.conf;
     "tmux/tokyonight_storm.tmux".source = dotfiles/.config/tmux/tokyonight_storm.tmux;
     "ghostty/config".source = dotfiles/.config/ghostty/config;
     "ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
@@ -69,5 +68,17 @@
       style = "full";
       inline_height = 0;
     };
+  };
+
+  programs.tmux = {
+    enable = true;
+
+    plugins = [
+      pkgs.tmuxPlugins.resurrect
+      pkgs.tmuxPlugins.open
+      pkgs.tmuxPlugins.urlview
+    ];
+
+    extraConfig = builtins.readFile ./dotfiles/.config/tmux/tmux.conf;
   };
 }
