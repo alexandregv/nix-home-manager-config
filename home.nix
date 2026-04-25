@@ -77,6 +77,10 @@
         controlMaster = "auto";
         controlPath = "~/.ssh/sockets/%r@%h-%p";
         controlPersist = "15m";
+
+        setEnv = {
+          TERM = "xterm-256color";
+        };
       };
     };
   };
