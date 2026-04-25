@@ -65,6 +65,22 @@
     enable = true;
   };
 
+  programs.ssh = {
+    enable = true;
+    enableDefaultConfig = false;
+
+    matchBlocks = {
+      "*" = {
+        hashKnownHosts = true;
+        serverAliveInterval = 60; # 1m
+
+        controlMaster = "auto";
+        controlPath = "~/.ssh/sockets/%r@%h-%p";
+        controlPersist = "15m";
+      };
+    };
+  };
+
   programs.atuin = {
     enable = true;
     flags = [ "--disable-up-arrow" ];
