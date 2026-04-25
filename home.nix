@@ -23,6 +23,8 @@
     pkgs.bat
     pkgs.ncdu
     pkgs.extract_url
+    pkgs.k3d
+    pkgs.kubectl
     pkgs.gdb
   ];
 
