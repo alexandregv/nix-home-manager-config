@@ -56,14 +56,14 @@
 
   imports = [
     ./modules/services/hister.nix
+
+    ./modules/programs/atuin.nix
   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.bash = {
-    enable = true;
-  };
+  programs.bash.enable = true;
 
   programs.ssh = {
     enable = true;
@@ -95,13 +95,6 @@
     };
   };
 
-  programs.atuin = {
-    enable = true;
-    flags = [ "--disable-up-arrow" ];
-    settings = {
-      filter_mode = "global";
-      style = "full";
-      inline_height = 0;
     };
   };
 
