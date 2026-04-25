@@ -53,7 +53,7 @@
   };
 
   imports = [
-    ./modules/hister.nix
+    ./modules/services/hister.nix
   ];
 
   # Let Home Manager install and manage itself.
