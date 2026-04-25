@@ -54,10 +54,16 @@
     FIGNORE = ":.lock:.sum";
   };
 
+  disabledModules = [
+    "programs/tmux.nix"
+  ];
+
   imports = [
     ./modules/services/hister.nix
 
     ./modules/programs/atuin.nix
+    ./modules/programs/overrides/tmux.nix
+    ./modules/programs/tmux.nix
   ];
 
   # Let Home Manager install and manage itself.
@@ -96,17 +102,5 @@
   };
 
     };
-  };
-
-  programs.tmux = {
-    enable = true;
-
-    plugins = [
-      pkgs.tmuxPlugins.resurrect
-      pkgs.tmuxPlugins.open
-      pkgs.tmuxPlugins.urlview
-    ];
-
-    extraConfig = builtins.readFile ./dotfiles/.config/tmux/tmux.conf;
   };
 }
