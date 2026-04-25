@@ -1,0 +1,5 @@
+# Use Intel syntax for ASM
+set disassembly-flavor intel
+
+# Enable debuginfod (skip prompt at run)
+set debuginfod enabled on

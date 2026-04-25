@@ -23,6 +23,7 @@
     pkgs.bat
     pkgs.ncdu
     pkgs.extract_url
+    pkgs.gdb
   ];
 
   home.file = {
@@ -37,6 +38,8 @@
     "ghostty/config".source = dotfiles/.config/ghostty/config;
     "ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
     "hister/config.yaml".source = dotfiles/.config/hister/config.yaml;
+    "gdb/gdbearlyinit".source = dotfiles/.config/gdb/gdbearlyinit;
+    "gdb/gdbinit".source = dotfiles/.config/gdb/gdbinit;
   };
 
   # Home Manager can also manage your environment variables through
