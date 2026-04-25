@@ -82,6 +82,16 @@
           TERM = "xterm-256color";
         };
       };
+
+      "f1*r*s* f1b*r*s* f4*r*s* f6*r*s*" = {
+        hostname = "%h.paris.42.school";
+        user = "reach";
+        extraOptions = {
+          GSSAPIAuthentication = "yes";
+          GSSAPIDelegateCredentials = "yes";
+        };
+      };
+
     };
   };
 
