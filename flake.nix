@@ -12,10 +12,11 @@
 
     hister.url = "github:asciimoo/hister";
     bluebuild.url = "https://flakehub.com/f/blue-build/cli/v0.9.35.tar.gz";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
-    { nixpkgs, unstable, home-manager, hister, bluebuild, ... }:
+    { nixpkgs, unstable, home-manager, hister, bluebuild, nix-flatpak, ... }:
     let
       system = "x86_64-linux";
 
@@ -45,6 +46,7 @@
         modules = [
 	  ./home.nix
           hister.homeModules.default
+          nix-flatpak.homeManagerModules.nix-flatpak
 	];
       };
     };

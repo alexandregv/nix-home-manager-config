@@ -60,6 +60,7 @@
 
   imports = [
     ./modules/services/hister.nix
+    ./modules/services/flatpak.nix
 
     ./modules/programs/atuin.nix
     ./modules/programs/overrides/tmux.nix
