@@ -1,6 +1,6 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
-  fedoraCABundle = "/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem";
+  caBundle = "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt";
 in
 {
   services.flatpak = {
@@ -17,8 +17,8 @@ in
   };
 
   systemd.user.services."flatpak-managed-install".Service.Environment = [
-    "SSL_CERT_FILE=${fedoraCABundle}"
-    "CURL_CA_BUNDLE=${fedoraCABundle}"
-    "NIX_SSL_CERT_FILE=${fedoraCABundle}"
+    "SSL_CERT_FILE=${caBundle}"
+    "CURL_CA_BUNDLE=${caBundle}"
+    "NIX_SSL_CERT_FILE=${caBundle}"
   ];
 }
