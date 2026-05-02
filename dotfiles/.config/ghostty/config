@@ -34,3 +34,5 @@ font-size = 11
 
 # Keybinds
 keybind = ctrl+shift+f=toggle_fullscreen
+
+command=tmux new-session -A
