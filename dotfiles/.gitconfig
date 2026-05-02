@@ -1,0 +1,57 @@
+[core]
+	pager = delta
+
+[delta]
+	syntax-theme = ansi
+	dark = true
+	features = line-numbers
+
+[interactive]
+	diffFilter = delta --color-only
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[branch]
+	autosetuprebase = always
+
+[credential]
+	helper = cache --timeout 900
+
+[user]
+	email = reach@42paris.fr
+	name = Reach
+
+[alias]
+	st = status
+	wt = worktree
+	l  = log --graph --decorate --oneline -n10
+	ll = log --graph --decorate --pretty=format:'%C(yellow)%h%Creset %Cgreen(%an)%Creset %Cblue[%ad]%Creset %C(auto)%d%Creset %s%Creset' --date=short -n10
+	d  = diff
+	ds = diff --staged
+
+[push]
+	autoSetupRemote = true
+[merge]
+	conflictStyle = zdiff3
+[merge "mergiraf"]
+	name = mergiraf
+	driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
+[pack]
+	threads = 12
+[http]
+	postBuffer = 1024M
+	cookiefile = /var/home/reach/.gitcookies
+
+[identity "reach_at_42paris_dot_fr"]
+	name = Reach
+	email = reach@42paris.fr
+[identity "contact_at_alexandregv_dot_fr"]
+	name = Alexandre GV.
+	email = contact@alexandregv.fr
+[identity "aguiot--_at_student_dot_42_dot_fr"]
+	name = aguiot--
+	email = aguiot--@student.42.fr

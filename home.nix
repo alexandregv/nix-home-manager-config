@@ -26,6 +26,7 @@
     pkgs.k3d
     pkgs.kubectl
     pkgs.gdb
+    pkgs.delta
   ];
 
   home.file = {
@@ -33,6 +34,7 @@
     #".bashrc".source = dotfiles/.bashrc;
     ".local/bin/vpn-fzf".source = dotfiles/.local/bin/vpn-fzf;
     ".urlview".source = dotfiles/.urlview;
+    ".gitconfig".source = dotfiles/.gitconfig;
   };
 
   xdg.configFile = {
