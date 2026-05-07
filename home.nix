@@ -58,6 +58,8 @@
     FIGNORE = ":.lock:.sum";
   };
 
+  home.sessionPath = ["$HOME/.local/bin/gobin"];
+
   disabledModules = [
     "programs/tmux.nix"
   ];
