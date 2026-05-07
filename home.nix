@@ -39,6 +39,7 @@
   };
 
   xdg.configFile = {
+    "nix/nix.conf".source = dotfiles/.config/nix/nix.conf;
     "tmux/tokyonight_storm.tmux".source = dotfiles/.config/tmux/tokyonight_storm.tmux;
     "ghostty/config".source = dotfiles/.config/ghostty/config;
     "ghostty/themes/tokyonight-storm".source = dotfiles/.config/ghostty/themes/tokyonight-storm;
