@@ -27,6 +27,7 @@
     pkgs.kubectl
     pkgs.gdb
     pkgs.delta
+    pkgs.meteor-git
   ];
 
   home.file = {
