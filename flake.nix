@@ -5,9 +5,9 @@
     nixpkgs.url  = "github:nixos/nixpkgs/nixos-25.11";
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager = {
+    home-manager-src = {
       url = "github:nix-community/home-manager/release-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
     };
 
     hister.url = "github:asciimoo/hister";
@@ -16,7 +16,7 @@
   };
 
   outputs =
-    { nixpkgs, unstable, home-manager, hister, bluebuild, nix-flatpak, ... }:
+    { nixpkgs, unstable, home-manager-src, hister, bluebuild, nix-flatpak, ... }:
     let
       system = "x86_64-linux";
 
@@ -33,6 +33,18 @@
       unstablePkgs = import unstable {
         inherit system;
         # config.allowUnfree = true;
+      };
+
+      # I don't like the "warning: 'install' is a deprecated alias for 'add'" warning
+      patchedHomeManagerSrc = pkgs.runCommand "home-manager-patched" {} ''
+        cp -R ${home-manager-src} $out
+        chmod -R u+w $out
+        substituteInPlace $out/modules/home-environment.nix \
+          --replace-fail "profile install" "profile add"
+      '';
+
+      home-manager = import patchedHomeManagerSrc {
+        inherit pkgs;
       };
     in
     {
