@@ -57,6 +57,9 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     FIGNORE = ":.lock:.sum";
+
+    DOCKER_HOST = "unix://$XDG_RUNTIME_DIR/podman/podman.sock";
+    DOCKER_SOCK = "$XDG_RUNTIME_DIR/podman/podman.sock";
   };
 
   home.sessionPath = ["$HOME/.local/bin/gobin"];
