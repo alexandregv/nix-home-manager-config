@@ -47,6 +47,7 @@
     "gdb/gdbearlyinit".source = dotfiles/.config/gdb/gdbearlyinit;
     "gdb/gdbinit".source = dotfiles/.config/gdb/gdbinit;
     "k3d/basic-cluster.yaml".source = dotfiles/.config/k3d/basic-cluster.yaml;
+    "bat/config".source = dotfiles/.config/bat/config;
   };
 
   # Home Manager can also manage your environment variables through
