@@ -1,0 +1,21 @@
+# $schema: https://github.com/k3d-io/k3d/blob/main/pkg/config/v1alpha5/schema.json
+
+# k3d cluster create basic --no-lb --wait --image docker.io/rancher/k3s:v1.35.3-k3s1 --k3s-arg '--kubelet-arg=feature-gates=KubeletInUserNamespace=true@server:*'
+
+---
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: basic
+servers: 1
+agents: 2
+image: docker.io/rancher/k3s:v1.35.3-k3s1
+options:
+  k3d:
+    wait: true
+    disableLoadbalancer: true
+  k3s:
+    extraArgs:
+      - arg: '--kubelet-arg=feature-gates=KubeletInUserNamespace=true'
+        nodeFilters:
+          - 'server:*'
