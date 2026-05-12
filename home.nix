@@ -28,6 +28,7 @@
     pkgs.gdb
     pkgs.delta
     pkgs.meteor-git
+    pkgs.hl-log-viewer
   ];
 
   home.file = {
