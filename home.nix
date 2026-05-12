@@ -80,8 +80,8 @@
     ./modules/programs/ssh.nix
   ];
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-
-  programs.bash.enable = true;
+  programs = {
+    home-manager.enable = true; # Let Home Manager install and manage itself.
+    bash.enable = true;
+  };
 }
