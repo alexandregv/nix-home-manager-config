@@ -29,6 +29,7 @@
     pkgs.delta
     pkgs.meteor-git
     pkgs.hl-log-viewer
+    pkgs.pgcli
   ];
 
   home.file = {
