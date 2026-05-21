@@ -65,7 +65,10 @@
     DOCKER_SOCK = "$XDG_RUNTIME_DIR/podman/podman.sock";
   };
 
-  home.sessionPath = ["$HOME/.local/bin/gobin"];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "$HOME/.local/bin/gobin"
+  ];
 
   disabledModules = [
     "programs/tmux.nix"
