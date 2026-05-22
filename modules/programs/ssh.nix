@@ -19,7 +19,7 @@
         };
       };
 
-      "f1*r*s* f1b*r*s* f4*r*s* f6*r*s*" = {
+      "f0*r*s* f1*r*s* f1b*r*s* f2*r*s* f4*r*s* f6*r*s*" = {
         hostname = "%h.paris.42.school";
         user = "reach";
         extraOptions = {
