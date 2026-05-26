@@ -2,6 +2,7 @@
 {
   programs.atuin = {
     enable = true;
+    enableBashIntegration = true;
     flags = [ "--disable-up-arrow" ];
     settings = {
       filter_mode = "global";

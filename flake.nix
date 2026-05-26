@@ -26,6 +26,16 @@
         overlays = [
           (final: prev: {
             bluebuild = bluebuild.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
+
+            # Fix bash-preexec to make direnv+atuin work (see https://github.com/nix-community/home-manager/issues/5958)
+            bash-preexec = prev.bash-preexec.overrideAttrs {
+              src = pkgs.fetchFromGitHub {
+                owner = "rcaloras";
+                repo = "bash-preexec";
+                rev = "35fead9f3442bed7d096332c7845223f5dbf7faa";
+                hash = "sha256-NcZxx7k2OkaeLtN2Iiu/fbstAIAA0QYRDEt37HAH/mg=";
+              };
+            };
           })
         ];
       };
