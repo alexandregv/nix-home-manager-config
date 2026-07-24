@@ -25,6 +25,7 @@
         extraOptions = {
           GSSAPIAuthentication = "yes";
           GSSAPIDelegateCredentials = "yes";
+          StrictHostKeyChecking = "no";
         };
       };
 
