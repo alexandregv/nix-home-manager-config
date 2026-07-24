@@ -29,3 +29,11 @@ if [ -e /var/home/reach/.nix-profile/etc/profile.d/nix.sh ]; then . /var/home/re
 set -o vi
 
 export EDITOR=nvim
+
+function wt() {
+  output=$(worktree "$@")
+  if [[ $? == 0 ]] && [[ "$output" == /* ]]; then
+    cd "$output"
+  fi
+  printf "$output\n"
+}
