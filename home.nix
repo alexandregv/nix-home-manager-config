@@ -30,6 +30,10 @@
     pkgs.meteor-git
     pkgs.hl-log-viewer
     pkgs.pgcli
+    pkgs.sq
+    pkgs.kafkactl
+    pkgs.keycloak
+    pkgs.gcc
   ];
 
   home.file = {
