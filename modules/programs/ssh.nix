@@ -5,28 +5,26 @@
     enableDefaultConfig = false;
     includes = ["~/.ssh/config_private"];
 
-    matchBlocks = {
+    settings = {
       "*" = {
-        hashKnownHosts = true;
-        serverAliveInterval = 60; # 1m
+        HashKnownHosts = true;
+        ServerAliveInterval = 60; # 1m
 
-        controlMaster = "auto";
-        controlPath = "~/.ssh/sockets/%r@%h-%p";
-        controlPersist = "15m";
+        ControlMaster = "auto";
+        ControlPath = "~/.ssh/sockets/%r@%h-%p";
+        ControlPersist = "15m";
 
-        setEnv = {
+        SetEnv = {
           TERM = "xterm-256color";
         };
       };
 
       "f0*r*s* f1*r*s* f1b*r*s* f2*r*s* f4*r*s* f6*r*s*" = {
-        hostname = "%h.paris.42.school";
-        user = "reach";
-        extraOptions = {
-          GSSAPIAuthentication = "yes";
-          GSSAPIDelegateCredentials = "yes";
-          StrictHostKeyChecking = "no";
-        };
+        Hostname = "%h.paris.42.school";
+        User = "reach";
+        GSSAPIAuthentication = "yes";
+        GSSAPIDelegateCredentials = "yes";
+        StrictHostKeyChecking = "no";
       };
 
     };
