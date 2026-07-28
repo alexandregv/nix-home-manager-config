@@ -11,7 +11,7 @@
     };
 
     hister.url = "github:asciimoo/hister";
-    bluebuild.url = "https://flakehub.com/f/blue-build/cli/v0.9.35.tar.gz";
+    bluebuild.url = "https://flakehub.com/f/blue-build/cli/v0.9.36.tar.gz";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
