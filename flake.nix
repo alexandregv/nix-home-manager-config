@@ -66,10 +66,10 @@
         };
 
         modules = [
-	  ./home.nix
+          ./home.nix
           hister.homeModules.default
           nix-flatpak.homeManagerModules.nix-flatpak
-	];
+        ];
       };
     };
 }
