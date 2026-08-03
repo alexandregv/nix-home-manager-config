@@ -56,9 +56,8 @@
       home-manager = import patchedHomeManagerSrc {
         inherit pkgs;
       };
-    in
-    {
-      homeConfigurations."reach" = home-manager.lib.homeManagerConfiguration {
+
+      homeConfiguration = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         extraSpecialArgs = {
@@ -71,5 +70,9 @@
           nix-flatpak.homeManagerModules.nix-flatpak
         ];
       };
+    in
+    {
+      homeConfigurations."reach" = homeConfiguration;
+      packages.${system}.default = homeConfiguration.activationPackage;
     };
 }
