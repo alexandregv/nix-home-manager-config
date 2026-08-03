@@ -7,7 +7,7 @@
 
     home-manager-src = {
       url = "github:nix-community/home-manager/release-26.05";
-      flake = false;
+      flake = true;
     };
 
     hister.url = "github:asciimoo/hister";
