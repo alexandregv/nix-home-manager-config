@@ -34,6 +34,7 @@
     pkgs.kafkactl
     pkgs.keycloak
     pkgs.gcc
+    pkgs.mpv
   ];
 
   home.file = {
