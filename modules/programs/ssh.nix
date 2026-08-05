@@ -7,6 +7,8 @@
 
     settings = {
       "*" = {
+        AddKeysToAgent = true;
+
         HashKnownHosts = true;
         ServerAliveInterval = 60; # 1m
 
