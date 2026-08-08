@@ -11,12 +11,13 @@
     };
 
     hister.url = "github:asciimoo/hister";
+    herdr.url = "github:herdrdev/herdr";
     bluebuild.url = "https://flakehub.com/f/blue-build/cli/v0.9.36.tar.gz";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
   outputs =
-    { nixpkgs, unstable, home-manager-src, hister, bluebuild, nix-flatpak, ... }:
+    { nixpkgs, unstable, home-manager-src, hister, herdr, bluebuild, nix-flatpak, ... }:
     let
       system = "x86_64-linux";
 
@@ -26,6 +27,7 @@
         overlays = [
           (final: prev: {
             bluebuild = bluebuild.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
+            herdr = herdr.packages.${prev.stdenvNoCC.hostPlatform.system}.default;
 
             # Fix bash-preexec to make direnv+atuin work (see https://github.com/nix-community/home-manager/issues/5958)
             bash-preexec = prev.bash-preexec.overrideAttrs {

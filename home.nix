@@ -35,6 +35,7 @@
     pkgs.keycloak
     pkgs.gcc
     pkgs.mpv
+    pkgs.herdr
   ];
 
   home.file = {
@@ -55,6 +56,7 @@
     "gdb/gdbinit".source = dotfiles/.config/gdb/gdbinit;
     "k3d/basic-cluster.yaml".source = dotfiles/.config/k3d/basic-cluster.yaml;
     "bat/config".source = dotfiles/.config/bat/config;
+    "herdr/config.toml".source = dotfiles/.config/herdr/config.toml;
   };
 
   # Home Manager can also manage your environment variables through
