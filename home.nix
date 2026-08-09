@@ -36,6 +36,7 @@
     pkgs.gcc
     pkgs.mpv
     pkgs.herdr
+    pkgs.nwg-displays
   ];
 
   home.file = {
