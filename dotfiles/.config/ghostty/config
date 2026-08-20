@@ -11,6 +11,9 @@ theme = tokyonight-storm
 fullscreen = true
 gtk-titlebar = false
 window-decoration = false
+window-padding-color = extend-always
+window-padding-x = 0
+window-padding-y = 0
 title = Ghostty
 
 # Use a block cursor and hide mouse while typing
