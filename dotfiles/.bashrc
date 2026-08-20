@@ -37,3 +37,5 @@ function wt() {
   fi
   printf "$output\n"
 }
+
+function cd() { builtin cd "$*" && ls; }
