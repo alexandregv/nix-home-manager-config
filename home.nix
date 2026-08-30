@@ -58,6 +58,9 @@
     "k3d/basic-cluster.yaml".source = dotfiles/.config/k3d/basic-cluster.yaml;
     "bat/config".source = dotfiles/.config/bat/config;
     "herdr/config.toml".source = dotfiles/.config/herdr/config.toml;
+    "hypr/hyprland.lua".source = dotfiles/.config/hypr/hyprland.lua;
+    "hypr/monitors.lua".source = dotfiles/.config/hypr/monitors.lua;
+    "hypr/workspaces.lua".source = dotfiles/.config/hypr/workspaces.lua;
   };
 
   # Home Manager can also manage your environment variables through
