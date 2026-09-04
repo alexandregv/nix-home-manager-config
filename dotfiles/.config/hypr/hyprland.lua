@@ -25,8 +25,9 @@ require("monitors")
 ---------------------
 
 -- Set programs that you use
-local terminal    = "kitty"
+local terminal    = "ghostty"
 local fileManager = "nautilus"
+local browser     = "/var/home/reach/.local/bin/ZenTwilight.AppImage"
 
 
 -------------------
@@ -260,9 +261,10 @@ hl.gesture({
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 -- Kill the process owning the window with a SIGKILL
-hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.kill())
+hl.bind(mainMod .. " + Q", hl.dsp.window.kill())
 -- Send a graceful request to close the window
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
